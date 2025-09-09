@@ -31,7 +31,9 @@ python delete_researchmap.py --permalink matsui528
 
 ## 使いどころ
 Researchmapに論文情報を載せたいとき、毎回追記していくと管理が大変になります。手元にオレオレ論文リスト情報がありそれを管理している場合、
+
 - 本コマンドを使ってResearchmap上の情報を削除
 - オレオレ論文リストから最新の「Researchmap形式論文リストcsv」を生成
 - Researchmapにインポート
+
 とするのが楽であろうと考え、この削除コマンドを作りました（Researchmap側はいつでも情報を消していい、すなわち状態を持たせないようにする）
