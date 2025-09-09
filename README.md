@@ -11,11 +11,14 @@ Researchmapに登録したデータは一括削除をするのが大変です。
 
 
 ### 使用方法
-たとえばあなたのpermalink（researchmapにおけるID。[https://researchmap.jp/matsui528](https://researchmap.jp/matsui528)の場合は`matsui528`）が`matsui528`だとしましょう。その場合、下記を実行してください。
+あなたのpermalinkが`matsui528`だとします（ここでpermalinkとはresearchmapにおけるIDで、[https://researchmap.jp/matsui528](https://researchmap.jp/matsui528)の場合は`matsui528`がpermalinkです）。その場合、下記を実行してください。
+
 ```bash
 python delete_researchmap.py --permalink matsui528
 ```
+
 （上記のコマンドは以下のcsvファイルを生成するだけで、Researchmap上のデータを直接削除したりすることはありません）
+
 
 ## 出力ファイル
 
@@ -28,6 +31,12 @@ python delete_researchmap.py --permalink matsui528
 2. **デバッグ用JSONファイル**: 例：`researchmap_matsui528_debug.json`
    - APIから取得した生データです。
    - トラブルシューティング用です。
+
+## 仕組み
+```
+https://api.researchmap.jp/matsui528?limit=1000
+```
+のようにAPIを叩くと、`matsui528`に関する全情報が得られます（`limit=1000`をつけないと上位20件の情報しか得られないので注意）。この情報を整形し、各論文のIDをまとめて表示しています。
 
 ## 使いどころ
 Researchmapに論文情報を載せたいとき、毎回追記していくと管理が大変になります。手元にオレオレ論文リスト情報がありそれを管理している場合、
